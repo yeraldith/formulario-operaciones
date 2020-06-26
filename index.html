@@ -23,13 +23,16 @@
             <option value="value4">Sumar</option>
             <option value="value5">Multiplicar por si mismo</option>
           </select>
-          <button id="button" class="button-form">Agregar</button>
+          <div>
+            <button id="button" class="button-form"><i class="fas fa-plus"></i>Agregar</button>
+            <button id="buttonborrar" class="button-form"><i class="fas fa-minus-circle"></i>Limpiar</button>
+          </div>
           <p id="texto"></p>
         </form>
       </section>
       <section class="section-dos">
         <div class="listado">
-          <ul  id="lista"></ul>
+          <ul id="lista" class="borrarlista"></ul>
         </div>
         <div class="listado">
           <ul id="resultado" class="borrar"></ul>
@@ -37,5 +40,6 @@
       </section>
     </main>
     <script src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/cd2331958e.js" crossorigin="anonymous"></script>
   </body>
 </html>

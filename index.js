@@ -1,9 +1,22 @@
 // const arrNumeros = [5, 2, 88, 66, 1, 0, 69];
-const arrNumeros = [];
+var arrNumeros = [];
 var button = document.getElementById("button");
-
 button.addEventListener("click", agregarNumero);
+var buttonBorrar = document.getElementById("buttonborrar");
+buttonBorrar.addEventListener("click", limpiarLista);
 
+function limpiarLista(e) {
+  e.preventDefault();
+  var limpiar = document.querySelectorAll(".borrarlista li");
+  var borrarli = document.querySelectorAll(".borrar li");
+  for (const i of limpiar) {
+    i.parentNode.removeChild(i);
+  }
+   for (const itera of borrarli) {
+     itera.parentNode.removeChild(itera);
+   }
+   arrNumeros=[];
+}
 function agregarNumero(e) {
   e.preventDefault();
   const numero = document.getElementById("numero").value;
@@ -90,3 +103,5 @@ function mostrarLista(arrResultadoOperaciones) {
     salida.classList.add("resultado");
   }
 }
+
+

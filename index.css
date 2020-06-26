@@ -61,7 +61,7 @@
   flex: 1;
   margin: 50px;
   align-self: center;
-  height: 350px;
+  height: 400px;
   box-shadow: 15px 11px 5px -2px rgba(64, 63, 63, 0.1);
 }
 .section-uno:hover {
@@ -141,7 +141,7 @@ select:active {
   background: var(--bg-blue);
   color: var(--bg-dark);
   height: 50px;
-  width: 187px;
+  width: 130px;
   border: none;
   border-radius: 5px;
 }
