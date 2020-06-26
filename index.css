@@ -23,9 +23,9 @@
 }
 .container-header::before {
   background-repeat: no-repeat;
-   background-image: url("./Images/trofeo.png");
-   background-position-x: center;
-   background-position-y: center;
+  background-image: url("./Images/trofeo.png");
+  background-position-x: center;
+  background-position-y: center;
   position: absolute;
   content: "";
   left: 50%;
@@ -38,7 +38,7 @@
 }
 /* Sección Main */
 .main {
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-flow: row;
 }
@@ -51,40 +51,64 @@
   text-align: center;
   margin-top: 20px;
 }
+.text-main {
+  margin-top: 15px;
+  font-family: roboto;
+  font-weight: 100;
+}
 .section-uno {
   text-align: center;
   flex: 1;
-  margin: 40px;
+  margin: 50px;
   align-self: center;
-  height: 300px;
+  height: 350px;
   box-shadow: 15px 11px 5px -2px rgba(64, 63, 63, 0.1);
+}
+.section-uno:hover {
+  box-shadow: none;
+  border: 3px solid var(--bg-blue);
+  border-radius: 12px;
 }
 .section-dos {
   padding: 25px;
   flex: 1;
   display: flex;
   flex-flow: row;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
 }
-table {
+.listado {
+  width: 200px;
+}
+.lista {
   border-radius: 5px;
   box-shadow: 15px 11px 5px -2px rgba(64, 63, 63, 0.1);
-}
-th{
   color: var(--bg-green);
   text-align: center;
-}
-tr{
-  text-align: center;
-}
-.li {
-  list-style: none;
-  color: blue;
+  font-family: roboto;
   font-size: 25px;
 }
-.resultado {
-  background: blueviolet;
+.lista::before {
+  content: "Número(s)";
 }
+.li {
+  text-align: center;
+  list-style: none;
+  color: var(--bg-dark);
+  font-size: 19px;
+}
+.resultado {
+  border-radius: 5px;
+  box-shadow: 15px 11px 5px -2px rgba(64, 63, 63, 0.1);
+  color: var(--bg-green);
+  text-align: center;
+  font-family: roboto;
+  font-size: 25px;
+}
+.resultado::before {
+  content: "Resultado";
+}
+
 /* Sección Formulario */
 .form {
   display: flex;
@@ -125,22 +149,21 @@ select:active {
   cursor: pointer;
   box-shadow: 15px 11px 5px -2px rgba(64, 63, 63, 0.1);
 }
-#texto{
-  color:var(--bg-pink);
+#texto {
+  margin-top: 14px;
+  color: var(--bg-pink);
   font-size: 22px;
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
   .container-header {
+    width: 100%;
     height: 100px;
   }
   .container-header::before {
-     background-image: url("./Images/numeral.png");
-    width: 100px;
-    height: 100px;
+    background-image: url("./Images/numeral.png");
+    width: 110px;
+    height: 110px;
   }
   .title-main {
     font-size: 22px;
@@ -153,5 +176,45 @@ select:active {
     width: 50%;
     margin-top: 55px;
     border: none;
+  }
+  input,
+  select {
+    height: 30px;
+    width: 180px;
+  }
+  .button-form {
+    height: 30px;
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .title-main {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  #texto {
+    font-size: 14px;
+  }
+  .section-uno {
+    margin-top: 40px;
+  }
+  .text-main {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  input,
+  select {
+    height: 30px;
+    width: 150px;
+  }
+  .lista::before {
+    font-size: 15px;
+  }
+  .resultado::before {
+    font-size: 15px;
+  }
+  .li {
+    font-size: 12px;
   }
 }

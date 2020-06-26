@@ -7,17 +7,15 @@
     <title>Formulario Números</title>
   </head>
   <body class="container">
-    <header class="container-header">
-    </header>
+    <header class="container-header"></header>
     <main class="main">
       <section class="section-uno">
         <h1 class="title-main">Ingrese un Número</h1>
-        <p>
+        <p class="text-main">
           Agregue los números que desee, escoja que operación desea ejecutar ☑
         </p>
-        <form class="form">
+        <form class="form" id="form">
           <input id="numero" type="number" placeholder="Número" required />
-         <p></p>
           <select id="select" name="select">
             <option value="value1" selected>Seleccionar</option>
             <option value="value2">Ordenar Mayor a Menor</option>
@@ -31,16 +29,11 @@
       </section>
       <section class="section-dos">
         <div class="listado">
-          <table>
-            <th>
-              Número
-            </th>
-            <tr id="lista"></tr>
-          </table>
+          <ul  id="lista"></ul>
         </div>
-        <ul id="resultado" class="resultado">
-
-        </ul>
+        <div class="listado">
+          <ul id="resultado" class="borrar"></ul>
+        </div>
       </section>
     </main>
     <script src="./index.js"></script>

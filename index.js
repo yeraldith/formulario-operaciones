@@ -1,6 +1,5 @@
-
-// const arrNumeros = [5,2,88,66,1,0,69];
-const arrNumeros=[];
+// const arrNumeros = [5, 2, 88, 66, 1, 0, 69];
+const arrNumeros = [];
 var button = document.getElementById("button");
 
 button.addEventListener("click", agregarNumero);
@@ -8,71 +7,86 @@ button.addEventListener("click", agregarNumero);
 function agregarNumero(e) {
   e.preventDefault();
   const numero = document.getElementById("numero").value;
-  const tr = document.getElementById("lista");
+  const lista = document.getElementById("lista");
   var mensaje = "";
   if (numero) {
     const li = document.createElement("li");
     li.classList.add("li");
     arrNumeros.push(parseInt(numero));
     li.appendChild(document.createTextNode(numero));
-    tr.appendChild(li);
+    lista.appendChild(li);
+    lista.classList.add("lista");
   } else {
     mensaje = "Ingrese un Número";
   }
   const mensajeTexto = document.getElementById("texto");
   mensajeTexto.innerHTML = mensaje;
-  function limpiar(numero) {
-    numero.innerHTML = "";
-  }
+  document.getElementById("form").reset();
 }
 
 const select = document.getElementById("select");
-
 select.addEventListener("change", seleccionarOperacion);
 
 function seleccionarOperacion() {
-  var valorSelect = select.value;
+  var arrResultadoOperaciones = [];
   const salida = document.getElementById("resultado");
-  var valor = [];
-  var total = 0;
   let resultado = document.createElement("li");
-  if (arrNumeros.length>0) {
+  resultado.classList.add("li");
+
+  var valorSelect = select.value;
+  var suma = 0;
+  var borrarli = document.querySelectorAll(".borrar li");
+  for (const itera of borrarli) {
+    itera.parentNode.removeChild(itera);
+  }
+  if (arrNumeros.length > 0) {
     switch (valorSelect) {
       case "value2":
-        valor = arrNumeros
+        arrResultadoOperaciones = arrNumeros
           .map((elemento) => elemento)
           .sort((a, b) => {
-            return b-a;
+            return b - a;
           });
-        resultado.appendChild(document.createTextNode(valor));
-        salida.appendChild(resultado);
+        mostrarLista(arrResultadoOperaciones);
         break;
       case "value3":
-        valor = arrNumeros
+        arrResultadoOperaciones = arrNumeros
           .map((elemento) => elemento)
           .sort((a, b) => {
             return a - b;
           });
-        resultado.appendChild(document.createTextNode(valor));
-        salida.appendChild(resultado);
+        mostrarLista(arrResultadoOperaciones);
         break;
       case "value4":
         for (const iterator of arrNumeros) {
-          total += iterator;
+          suma += iterator;
         }
-        resultado.appendChild(document.createTextNode(total));
+        resultado.appendChild(document.createTextNode(suma));
         salida.appendChild(resultado);
+        salida.classList.add("resultado");
         break;
       case "value5":
         for (const iterator of arrNumeros) {
-          valor.push(iterator * iterator);
+          arrResultadoOperaciones.push(iterator * iterator);
         }
-        resultado.appendChild(document.createTextNode(valor));
-        salida.appendChild(resultado);
+        mostrarLista(arrResultadoOperaciones);
         break;
     }
   } else {
-     resultado.appendChild(document.createTextNode("Usted no ha ingresado datos"));
-     salida.appendChild(resultado);
+    resultado.appendChild(
+      document.createTextNode("Usted no ha ingresado datos")
+    );
+    salida.appendChild(resultado);
+  }
+}
+
+function mostrarLista(arrResultadoOperaciones) {
+  const salida = document.getElementById("resultado");
+  for (const i of arrResultadoOperaciones) {
+    let otroresultado = document.createElement("li");
+    otroresultado.classList.add("li");
+    otroresultado.appendChild(document.createTextNode(i));
+    salida.appendChild(otroresultado);
+    salida.classList.add("resultado");
   }
 }
