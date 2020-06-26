@@ -8,7 +8,41 @@
   </head>
   <body class="container">
     <header class="container-header">
-      <div></div>
     </header>
+    <main class="main">
+      <section class="section-uno">
+        <h1 class="title-main">Ingrese un Número</h1>
+        <p>
+          Agregue los números que desee, escoja que operación desea ejecutar ☑
+        </p>
+        <form class="form">
+          <input id="numero" type="number" placeholder="Número" required />
+         <p></p>
+          <select id="select" name="select">
+            <option value="value1" selected>Seleccionar</option>
+            <option value="value2">Ordenar Mayor a Menor</option>
+            <option value="value3">Ordenar Menor a Mayor</option>
+            <option value="value4">Sumar</option>
+            <option value="value5">Multiplicar por si mismo</option>
+          </select>
+          <button id="button" class="button-form">Agregar</button>
+          <p id="texto"></p>
+        </form>
+      </section>
+      <section class="section-dos">
+        <div class="listado">
+          <table>
+            <th>
+              Número
+            </th>
+            <tr id="lista"></tr>
+          </table>
+        </div>
+        <ul id="resultado" class="resultado">
+
+        </ul>
+      </section>
+    </main>
+    <script src="./index.js"></script>
   </body>
 </html>
